@@ -13,16 +13,27 @@ app.listen(PORT, function () {
     console.log(`listening on port ${PORT}`);
 });
 
-app.get('/', function (req, res) {
-    res.send('Happy Wednesday!');
-});
+// gyjfgjhfgk
+
+app.use(express.static('server/public'));
 
 let quotesString = '';
-function quoteStringMaker(item) {
+quoteStringMaker = (item) => {
     quotesString += '"' + item.quote + '" -' + item.author + ' \n';
 }
 quotes_data.forEach(quoteStringMaker);
 
 app.get('/all-quotes', function(req, res) {
     res.send(quotesString);
+});
+
+randomQuote = () => {
+    let i = Math.floor(Math.random()*3);
+    let quote = quotes_data[i];
+    returnString = '"' + quote.quote + '" -' + quote.author;
+    return returnString;
+}
+
+app.get('/quote', function(req, res) {
+    res.send(randomQuote());
 });
