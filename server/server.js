@@ -15,11 +15,13 @@ app.listen(PORT, function () {
 
 app.use(express.static('server/public'));
 
-let quotesString = '';
+let quotesString = '<ul>';
 quoteStringMaker = (item) => {
-    quotesString += '"' + item.quote + '" -' + item.author + ' \n';
+    quotesString += '<li>"' + item.quote + '" -' + item.author + '</li>';
 }
+
 quotes_data.forEach(quoteStringMaker);
+quotesString += '</ul>';
 
 app.get('/all-quotes', function(req, res) {
     res.send(quotesString);
