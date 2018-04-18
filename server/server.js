@@ -13,8 +13,6 @@ app.listen(PORT, function () {
     console.log(`listening on port ${PORT}`);
 });
 
-// gyjfgjhfgk
-
 app.use(express.static('server/public'));
 
 let quotesString = '';
