@@ -1,3 +1,21 @@
 body {
     background: repeating-radial-gradient(circle, black, green, aliceblue, lightgreen, darksalmon, pink, red, maroon, gold, blue, purple, yellow, green);
 }
+#quotes {
+    float: left;
+}
+input {
+    float: left;
+    margin: 20px;
+    width: 15%;
+}
+textarea {
+    float: left;
+    margin: 20px;
+    width: 70%;
+    height: 75px;
+}
+button {
+    margin: 20px;
+}
+
